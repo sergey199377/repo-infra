@@ -9,7 +9,9 @@ I made this choice based on the versatility of terraform. I did not use CloudFor
 
 
    Manifests include:
-``` ./prod ```
+
+`./prod
+```
 
      - EC2 instance for a jenkins CI/CD.
      - EKS cluster for a containerized application.
@@ -26,8 +28,12 @@ I chose ansible because it is a universal tool for infrastructure orchestration.
 ```
  ./roles/jenkins_common
 ```
-     - Configure sudoers, Change root password, Install jenkins, Install kubectl, Install helm, change sshd config.
+     - Configure sudoers 
+     - Change root password
+     - Change sshd config 
+     - Install Jenkins
+     - Install kubectl 
+     - Install Helm 
        
-
 
 Author: Sergey Zamashnoi
