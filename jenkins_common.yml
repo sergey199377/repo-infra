@@ -1,0 +1,5 @@
+- name: 'Provision Role'
+  hosts: all
+  become: true
+  roles:
+    - jenkins_common

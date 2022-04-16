@@ -1,0 +1,53 @@
+---
+- include: auth.yml
+  tags: always
+
+- include: ssh.yml
+  tags: always
+
+- include: jenkins.yml
+
+
+
+# Install kubectl
+
+- name: Download kubectl binary
+  get_url:
+    url: "https://storage.googleapis.com/kubernetes-release/release/v{{ kubectl_version }}/bin/{{ kubectl_os }}/{{ arch }}/kubectl"
+    dest: /tmp
+  tags:
+    - kubectl
+
+- name: Copy kubectl binary to destination directory
+  copy:
+    src: /tmp/kubectl
+    dest: /usr/bin/kubectl
+    mode: 0755
+    owner: root
+    group: root
+
+# Install helm
+
+- name: Download kubectl binary
+  get_url:
+    url: "https://get.helm.sh/helm-v{{ helm_version }}-linux-{{ arch }}.tar.gz"
+    dest: /tmp
+  tags:
+    - helm
+
+- name: Unarchive helm binary
+  unarchive:
+    src: /tmp/helm-v{{ helm_version }}-linux-{{ arch }}.tar.gz
+    dest: /tmp
+    remote_src: true
+  tags:
+    - helm
+
+- name: Copy helm binary to destination directory
+  copy:
+    src: /tmp/linux-{{ arch }}/helm
+    dest: /usr/bin/helm
+    mode: 0755
+    owner: root
+    group: root
+
