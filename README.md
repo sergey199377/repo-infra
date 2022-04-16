@@ -10,6 +10,7 @@ I made this choice based on the versatility of terraform. I did not use CloudFor
 
    Manifests include:
 
+```
  ./prod
 ```
 
