@@ -1,8 +1,8 @@
 # Infrastructure for a myapp
 
-### Infrastructure contains: 
+## Infrastructure contains: 
 
-## Terraform manifests for infrastructure deployment in the aws cloud
+### Terraform manifests for infrastructure deployment in the aws cloud
 
 
 I made this choice based on the versatility of terraform. I did not use CloudFormation, because in conjunction with other tools, such as vault, ansible, it is less suitable.
@@ -18,8 +18,9 @@ I made this choice based on the versatility of terraform. I did not use CloudFor
      - ECR repo for storing images.
      - VPC, SEC, GW for a network.
 
+---
 
-## Ansible role for setup jenkins node:
+### Ansible role for setup jenkins node:
 
 I chose ansible because it is a universal tool for infrastructure orchestration.
 
