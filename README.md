@@ -10,7 +10,7 @@ I made this choice based on the versatility of terraform. I did not use CloudFor
 
    Manifests include:
 
-`./prod
+ ./prod
 ```
 
      - EC2 instance for a jenkins CI/CD.
@@ -26,7 +26,7 @@ I chose ansible because it is a universal tool for infrastructure orchestration.
    Role include:
 
 ```
- ./roles/jenkins_common
+  ./roles/jenkins_common
 ```
      - Configure sudoers 
      - Change root password
